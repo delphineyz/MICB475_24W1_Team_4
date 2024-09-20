@@ -5,6 +5,6 @@ Bhavya Mohan\
 Delphine Zhou\
 Jagroop Randhawa\
 Parsa Khanbadr\
-Simran Dhesi\
+Simran Dhesi
 
 # Table of Contents
