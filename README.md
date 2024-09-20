@@ -1,2 +1,10 @@
 # MICB475_24W1_Team_4
-MICB475 Project 2
+
+# Group Members
+Bhavya Mohan
+Delphine Zhou
+Jagroop Randhawa
+Parsa Khanbadr
+Simran Dhesi
+
+# Table of Contents
