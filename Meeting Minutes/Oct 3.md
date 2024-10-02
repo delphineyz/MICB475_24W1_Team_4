@@ -1,7 +1,16 @@
 # Oct 3. - Second Meeting
 
 ## Agenda: 
-- update from Evelyn on the Alzheimr's dataset
-- get advice from the teaching team on our current ideas
-   1) PD/Alzheimer's (?) Dataset
-- Does sleep deprivation and its effect on glucose levels impact microbiome diversity within PD patients?
+- update from Evelyn on the Alzheimer's dataset
+- get advice from the teaching team on our current ideas:
+
+PD/Alzheimer's (?) Dataset
+1) Does sleep deprivation and its effect on glucose levels impact microbiome diversity within PD patients?
+2) Does IBS/constipation associated with microbiome diversity within PD and Alzheimer’s? 
+
+Back-up Dataset MS:
+1) Is there a specific allergen that makes that microbiome conducive for MS?
+2) Does living on a farm make the microbiome more conducive for disease?
+
+- ask about logistics and delegating tasks
+- feedback on determining a question/potential AIMS and future directions (e.g. creating a timeline, etc.) 
