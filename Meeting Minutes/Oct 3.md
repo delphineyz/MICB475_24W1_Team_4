@@ -19,3 +19,8 @@ Back-up Dataset MS:
 
 - ask about logistics and delegating tasks
 - feedback on determining a question/potential AIMS and future directions (e.g. creating a timeline, etc.) 
+
+## Meeting Minutes
+- Considering ISS dataset and/or other NASA datasets
+- [Dataset](https://osdr.nasa.gov/bio/repo/data/studies/OSD-694) and [paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11386075/)
+- Research question: 
