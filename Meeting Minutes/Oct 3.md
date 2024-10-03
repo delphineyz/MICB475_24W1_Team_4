@@ -6,14 +6,14 @@
 
 PD/Alzheimer's (?) Dataset
 1) Does sleep deprivation and its effect on glucose levels impact microbiome diversity within PD patients?
-2) Does IBS/constipation associated with microbiome diversity within PD and Alzheimer’s? 
+2) Is IBS/constipation associated with microbiome diversity within PD and Alzheimer’s? 
 3) How does the diveristy of the microbiome compare between PD and Alzheimer's Patients?
 
 Back-up Dataset ISS:
 1) How to access ISS dataset?
    
 Back-up Dataset MS:
-1) Is there a specific allergen that makes that microbiome conducive for MS?
+1) Is there a specific allergen that makes the microbiome conducive for MS?
 2) Does living on a farm make the microbiome more conducive for disease?
 
 - ask about logistics and delegating tasks
