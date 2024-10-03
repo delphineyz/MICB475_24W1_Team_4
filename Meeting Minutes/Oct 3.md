@@ -22,5 +22,5 @@ Back-up Dataset MS:
 
 ## Meeting Minutes
 - Considering ISS dataset and/or other NASA datasets
-- [Dataset](https://osdr.nasa.gov/bio/repo/data/studies/OSD-694) and [paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11386075/)
+- [Dataset](https://osdr.nasa.gov/bio/repo/data/studies/OSD-694), [paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11386075/), [metadata](https://docs.google.com/spreadsheets/d/1sYFWApS3anfyT-_HLJm6b2PJkU3hfb5Nj5fkB-dlImw/edit?gid=771785112#gid=771785112)
 - Research question: 
