@@ -9,4 +9,6 @@
   
 - looking for feedback on the research question and aims
 
+- how much/what data wrangling should we do with our dataset for the research proposal
+
 - what should we be doing in the next week and guidance on research proposal
