@@ -6,5 +6,6 @@
   3. To predict the functional potential of microbiomes in response to relative humidity variations using metagenomic approaches.
   4. To compare microbial taxa between constant relative humidity and varying relative humidity.
 
+- looking for feedback on the research question and aims
 
-  
+- what should we be doing in the next week and guidance on research proposal
