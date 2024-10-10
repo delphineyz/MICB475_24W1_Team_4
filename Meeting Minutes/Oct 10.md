@@ -1,4 +1,5 @@
 ## Agenda: 
+- Discuss our research question and AIMS:
 - our research question right now: How does low, medium and high levels of relative humidity affect microbiota diversity and subsequent metabolic pathways in the ISS?
 - AIMS:
   1. To assess the effect of different relative humidity levels on alpha and beta diversity of dust-associated microbiomes.
@@ -9,6 +10,6 @@
   
 - looking for feedback on the research question and aims
 
+Questions?
 - how much/what data wrangling should we do with our dataset for the research proposal
-
 - what should we be doing in the next week and guidance on research proposal
