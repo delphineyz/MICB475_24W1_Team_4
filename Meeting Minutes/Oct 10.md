@@ -27,4 +27,9 @@ Questions?
   -  Jagroop went over our AIMS
     - 4th AIM: comparing the constant and variable humidity
       - Hans' comments: how would this answer our research question?
-        -   f
+        -   Could this be an AIM itself, or should it be in the supplementary
+        -   We could change this AIM to the make it the second AIM?
+        -   We should explain how we are using this AIM to serve as a control
+   - For the research question, we should just change it to the "varying levels of humidity" <- make it more brief
+   - for the binning, we should find another paper to copy the relative humidity or we should explain how we bin the low, medium, and high levels
+   - 
