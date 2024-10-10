@@ -14,3 +14,8 @@
 Questions?
 - how much/what data wrangling should we do with our dataset for the research proposal
 - what should we be doing in the next week and guidance on research proposal
+
+## Meeting Minutes:
+- Points from Hans:
+- Assignment 5: think everyone did well with the code, but for the future we want to include all input files, all output files, and all scripts | add more details in the comments before the line of code
+- 
