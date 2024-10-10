@@ -7,6 +7,7 @@
   3. To predict the functional potential of microbiomes in response to relative humidity variations using metagenomic approaches.
   4. To compare microbial taxa between constant relative humidity and varying relative humidity.
 - how we are thinking of binning our relative humidity: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9691097/
+- alternatively, we will bin it ourselves based on percentages such as 50%, 85%-90%, and 100%; similar to this paper: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-024-01864-3
   
 - looking for feedback on the research question and aims
 
