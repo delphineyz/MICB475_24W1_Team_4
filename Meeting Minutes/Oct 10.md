@@ -3,7 +3,7 @@
 - our research question right now: How does low, medium and high levels of relative humidity affect microbiota diversity and subsequent metabolic pathways in the ISS?
 - AIMS:
   1. To assess the effect of different relative humidity levels on alpha and beta diversity of dust-associated microbiomes.
-  2. To characterize the changes in specific microbial taxa under different relative humidity  conditions.
+  2. To characterize the changes in specific microbial taxa under different relative humidity conditions.
   3. To predict the functional potential of microbiomes in response to relative humidity variations using metagenomic approaches.
   4. To compare microbial taxa between constant relative humidity and varying relative humidity.
 - how we are thinking of binning our relative humidity: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9691097/
@@ -37,5 +37,31 @@ Questions?
        - ex. based on this humidity, certain microbial taxa might suffer more, etc.
        - we are making our approach general, and maybe we shouldn't focus on a targeted taxa
    - our research question right now: How does varying levels of relative humidity affect microbiota diversity and metabolic pathways in the ISS?
-   - 
+   - AIM 1: change alpha and beta diversity into 'microbial composition'
+     - should we look at all the parameters for alpha and beta diversity, or should we just pick one? <- we should just pick one, mayabe one of the weighted ones, which shows relative abundance and not just precence and absence
+     - depends what we are trying to demonstrate: do we lose certain microbes based on certain conditions, or does the abundance change based on other conditions?
+   - AIM 2: to characterize the changes in specific microbial taxa under different relative humidity conditions.
+     - how are we going to do this?
+       - create a bar plot and see if the presence of different species is present
+       - Hans' comment: bar plot might not be the best to visualize this
+         - if we want to look at individual microbes its not great, we can start with the bar plot, but we should find different strategies (ex. Indicator Taxa)
+   - for the AIM 2 and AIM 4 that we have right now, they are kind of similar so try and find a way that we can make the analysis different between them
+     - maybe do one figure per AIM
+     - look at other papers and see what people have done
+   - AIM 3: To predict the functional potential of microbiomes in response to relative humidity variations using metagenomic approaches.
+     - be careful when using the word metagenomics
+     - maybe just take it out, or be more specific
+  - so shift the current AIM 4 to spot AIM 2, and then move each of them down one
+  - for the current AIM 4
+    - maybe we move this to AIM 1 and first see where constant and varying is done
+    - maybe do a matching comparison and compare 50% for both constant and varying relative humidities
+    - then we pick either working with Constant RH or Variable RH based on if we see if they are different from each other or if they are the same
+    - if there is an easy way to categorize the variable relative humidity then we should keep the current AIM 4, but if there isn't, then we should just mention constant and how we just used that
+
+For next week (action items)
+- written bullet points for proposal introduction and background
+- have our ojectives and aims ready (WITH DETAIL)
+- finish our approach
+- SO HAVE PARTS 2-5 COMPLETED
+- myabe finish the rest of the steps if there is enough time
        
