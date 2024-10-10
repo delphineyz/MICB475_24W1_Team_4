@@ -17,5 +17,14 @@ Questions?
 
 ## Meeting Minutes:
 - Points from Hans:
-- Assignment 5: think everyone did well with the code, but for the future we want to include all input files, all output files, and all scripts | add more details in the comments before the line of code
-- 
+  - Assignment 5: think everyone did well with the code, but for the future we want to include all input files, all output files, and all scripts | add more details in the comments before the line of code
+  - Proposal is due on October 20th, so get it started soon
+    - For the GANTT chart, pick either 7 or 10 days for timeline resolution
+    - Everyone should work on the Introduction and Background for the proposal, so that we all understand what's going on
+- From our updates:
+  -  different variables we would focus on: different humidity levels
+  -  Hans' comment: binning the numerical into the categorical variables
+  -  Jagroop went over our AIMS
+    - 4th AIM: comparing the constant and variable humidity
+      - Hans' comments: how would this answer our research question?
+        -   
