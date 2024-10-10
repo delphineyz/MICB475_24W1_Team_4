@@ -32,4 +32,10 @@ Questions?
         -   We should explain how we are using this AIM to serve as a control
    - For the research question, we should just change it to the "varying levels of humidity" <- make it more brief
    - for the binning, we should find another paper to copy the relative humidity or we should explain how we bin the low, medium, and high levels
+   - What should our hypothesis look like?
+     - It should be a prediction with a biological description
+       - ex. based on this humidity, certain microbial taxa might suffer more, etc.
+       - we are making our approach general, and maybe we shouldn't focus on a targeted taxa
+   - our research question right now: How does varying levels of relative humidity affect microbiota diversity and metabolic pathways in the ISS?
    - 
+       
