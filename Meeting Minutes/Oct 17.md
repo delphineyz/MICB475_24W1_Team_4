@@ -5,4 +5,5 @@
 ### Questions 
 - would love some assitance in making the QIME code that we used in class specific to paired-end sequences
 - denoising step: we can't seem to separate the forward and reverse reads for the denoise step
+- does PICRUSt2 require the use of OTUs?
 - questions about the README.md in our github: what should that look like?
