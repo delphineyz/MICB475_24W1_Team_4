@@ -8,4 +8,5 @@
   - for box 3F, how should we change it: "Generate bubble plot and stacked bar plot to show microbial taxa abundance" 
   - random notes
     - Jagroop, did you do feature-based filtering where you got rid of rare ASVs, maybe that is why we lost a lot of samples?   
-- *for Hans: we shall add more to the agenda this evening! 
+    - **![image](https://github.com/user-attachments/assets/1b566b25-ab0e-4117-9358-b73a62785ebe)
+**
