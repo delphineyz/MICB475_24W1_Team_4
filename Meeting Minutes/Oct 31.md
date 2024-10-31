@@ -5,6 +5,7 @@
   - also mentioned that we should avoid using ANCOM, even though we had Hans' support
   - TA commented that a T-test is wrong for AIM1 because our data is probably non-parametric, thus should we should consider Wilcoxon/Mann-Whiteney test right? (won't use Kruskall-wallis because we're comparing two groups, constant and then varying RH)
   - should we do our alpha/beta diversity tests on QIME, or on R?
+  - for box 3F, how should we change it: "Generate bubble plot and stacked bar plot to show microbial taxa abundance" 
   - random notes
     - Jagroop, did you do feature-based filtering where you got rid of rare ASVs, maybe that is why we lost a lot of samples?   
 - *for Hans: we shall add more to the agenda this evening! 
