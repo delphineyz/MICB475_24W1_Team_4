@@ -16,4 +16,10 @@
 - maybe type the results and figure legend in the README.md
 - when to reach out to Hans as well:
     - email Hans at any point and try and give him a day (smaller things) or two days (for larger files)
--      
+
+ ## Action Items:
+  - Jagroop get us update QIIME files
+  - Bhavya start alpha/beta diversity wtih Simran -> use more diversity metrics than just Shannon's diversity index and Bray-Crutis in order to perform testing
+  - Delphine begin DEseq2 and ANCOM (if time permits) -> can represent the DEseq2 as an bar plot showing the log-fold 2 change 
+  - Parsa start indicator species and core microbiome analysis
+  - Jagroop begin PICRust 2 analysis -> can show analysis as a heat map
