@@ -1,1 +1,21 @@
+# Load necessary library
+library(dplyr)
 
+# Read the metadata file, replacing 'nasa_dust_metadata_1.tsv' with your actual file path
+data <- read.table("~/Desktop/475_nasa_project/nasa_dust_metadata_1.tsv", header = TRUE, sep = "\t", check.names = FALSE)
+
+# Create new column 'humidity_bin' without altering any column names or number formats
+data <- data %>%
+  mutate(humidity_bin = case_when(
+    relative_humidity == 50 ~ "Low",
+    relative_humidity == 80 ~ "Medium",
+    relative_humidity %in% c(85, 90, 100) ~ "High",
+    TRUE ~ NA_character_  # In case there are other values
+  ))
+
+# Remove rows where 'relative_humidity' is NA
+data <- data %>% 
+  filter(!is.na(relative_humidity))
+
+# Write the updated data to a new TSV file
+write.table(data, "~/Desktop/475_nasa_project/updated_nasa_dust_metadata.tsv", sep = "\t", row.names = FALSE, quote = FALSE, col.names = TRUE)
