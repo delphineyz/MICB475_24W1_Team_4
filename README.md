@@ -20,3 +20,6 @@ Here is the link you can use: https://ubc.zoom.us/j/67359231965?pwd=1QOWWuFTTjXQ
 Meeting ID: 673 5923 1965
 
 Passcode: 574502
+
+
+Pre-mature presentation: https://www.canva.com/design/DAGXo6vdEds/lnBNRkQVD4r43wed26R2Uw/edit?utm_content=DAGXo6vdEds&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
