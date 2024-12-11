@@ -11,24 +11,10 @@ library(vegan)
 # Extract sample data from nasa_rare
 sample_data_df <- data.frame(sample_data(nasa_rare))
 
-# Compute richness metrics (Observed, Chao1, Shannon)
-richness_metrics <- estimate_richness(nasa_rare, measures = c("Observed", "Chao1", "Shannon"))
-
-# Calculate Faith's Phylogenetic Diversity (PD)
-phylo_dist <- pd(t(otu_table(nasa_rare)), phy_tree(nasa_rare), include.root = FALSE)
-
-# Add Faith's PD to the sample data in the phyloseq object
-sample_data(nasa_rare)$Faith_PD <- phylo_dist$PD
-
-# Add Faith's PD to the richness metrics
-faith_pd <- data.frame(SampleID = rownames(sample_data(nasa_rare)), Faith_PD = sample_data(nasa_rare)$Faith_PD)
-
-# Merge richness metrics with Faith's PD
-combined_metrics <- cbind(richness_metrics, `Faith's PD` = faith_pd$Faith_PD)
+# Compute richness metrics (Observed, Shannon)
+richness_metrics <- estimate_richness(nasa_rare, measures = c("Observed", "Shannon"))
 
 # Add treatment and humidity bin information
-combined_metrics$treatment <- sample_data_df$treatment
-combined_metrics$humidity_bin <- sample_data_df$humidity_bin
 richness_metrics$treatment <- sample_data_df$treatment
 richness_metrics$humidity_bin <- sample_data_df$humidity_bin
 
@@ -62,7 +48,7 @@ alpha_s1a <- ggplot(long_data, aes(x = treatment, y = Value, fill = treatment)) 
   labs(
     x = "Treatment",
     y = "Value",
-    title = "Alpha Diversity Metrics (Observed, Chao1, Shannon, Faith's PD)"
+    title = "Alpha Diversity Metrics"
   )
 
 # Print the combined plot
@@ -79,6 +65,9 @@ comparisons <- list(
   c("Low", "Medium")
 )
 
+# Reorder the levels of humidity_bin
+long_data$humidity_bin <- factor(long_data$humidity_bin, levels = c("Low", "Medium", "High"))
+
 # Create the combined plot
 alpha_1a <- ggplot(long_data, aes(x = humidity_bin, y = Value, fill = humidity_bin)) +
   geom_boxplot(alpha = 0.3, outlier.shape = 21, outlier.color = "black", outlier.size = 2) +
@@ -94,7 +83,7 @@ alpha_1a <- ggplot(long_data, aes(x = humidity_bin, y = Value, fill = humidity_b
   labs(
     x = "Humidity Bin",
     y = "Value",
-    title = "Alpha Diversity Metrics (Observed, Chao1, Shannon, Faith PD)"
+    title = "Alpha Diversity Metrics"
   )
 
 # Print the combined plot
