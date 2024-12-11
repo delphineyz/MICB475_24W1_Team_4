@@ -1,0 +1,91 @@
+sample-id	treatment	relative_humidity	Unit	material_type	Protocol REF	time	Unit_1	time_of_wetness	Unit_2	Sample_Storage_Temperature	Unit_3	humidity_bin
+B1-100-24HR-D21	Varying Relative Humidity	100	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	High
+B1-50-24HR-D5	Varying Relative Humidity	50	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	Low
+B2-50-24HR-D5	Varying Relative Humidity	50	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	Low
+B3-50-24HR-D5	Varying Relative Humidity	50	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	Low
+B4-50-24HR-D5	Varying Relative Humidity	50	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	Low
+B1-50-24HR-D10	Varying Relative Humidity	50	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	Low
+B2-50-24HR-D10	Varying Relative Humidity	50	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	Low
+B3-50-24HR-D10	Varying Relative Humidity	50	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	Low
+B4-50-24HR-D10	Varying Relative Humidity	50	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	Low
+B1-100-24HR-D5	Varying Relative Humidity	100	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	High
+B2-100-24HR-D10	Varying Relative Humidity	100	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	High
+B1-50-24HR-D14	Varying Relative Humidity	50	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	Low
+B2-50-24HR-D14	Varying Relative Humidity	50	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	Low
+B3-50-24HR-D14	Varying Relative Humidity	50	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	Low
+B4-50-24HR-D14	Varying Relative Humidity	50	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	Low
+B1-100-24HR-D10	Varying Relative Humidity	100	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	High
+B2-100-24HR-D14	Varying Relative Humidity	100	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	High
+B1-100-24HR-D14	Varying Relative Humidity	100	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	High
+B2-100-24HR-D21	Varying Relative Humidity	100	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	High
+B1-50-24HR-D21	Varying Relative Humidity	50	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	Low
+B2-50-24HR-D21	Varying Relative Humidity	50	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	Low
+B3-50-24HR-D21	Varying Relative Humidity	50	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	Low
+B4-50-24HR-D21	Varying Relative Humidity	50	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	Low
+B3-100-24HR-D5	Varying Relative Humidity	100	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	High
+B3-100-24HR-D10	Varying Relative Humidity	100	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	High
+B4-100-24HR-D10	Varying Relative Humidity	100	percent	Dust	sample collection	10	day	24	Hour per Day	-20	degree Celsius	High
+B3-100-24HR-D14	Varying Relative Humidity	100	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	High
+B4-100-24HR-D14	Varying Relative Humidity	100	percent	Dust	sample collection	14	day	24	Hour per Day	-20	degree Celsius	High
+B3-100-24HR-D21	Varying Relative Humidity	100	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	High
+B4-100-24HR-D21	Varying Relative Humidity	100	percent	Dust	sample collection	21	day	24	Hour per Day	-20	degree Celsius	High
+B4-100-24HR-D5	Varying Relative Humidity	100	percent	Dust	sample collection	5	day	24	Hour per Day	-20	degree Celsius	High
+B2-50-1	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B3-50-2	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B4-50-3	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B3-80-2	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B1-80-1	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B3-80-3	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B2-100-2	Constant Relative Humidity	100	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-50-1	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B2-50-2	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B3-50-3	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B1-80-2	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B4-80-1	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B1-80-3	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B4-80-2	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B1-50-2	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B2-50-3	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B4-50-1	Constant Relative Humidity	50	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B2-80-1	Constant Relative Humidity	80	No Relative Humidity Exposure	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B4-80-3	Constant Relative Humidity	80	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B2-80-2	Constant Relative Humidity	80	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B1-85-1	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-50-1	Constant Relative Humidity	50	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B4-50-2	Constant Relative Humidity	50	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Low
+B2-80-3	Constant Relative Humidity	80	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B3-80-1	Constant Relative Humidity	80	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	Medium
+B1-85-3	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-85-1	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-85-3	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-100-1	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-85-2	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-90-1	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-90-3	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-100-3	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-85-3	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-90-2	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-90-1	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-100-1	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-85-1	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-90-3	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-90-2	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-100-2	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-85-2	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-90-1	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-90-3	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-100-3	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-85-3	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-90-2	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-100-1	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-100-1	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-85-1	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B2-90-3	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-100-2	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-100-2	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-85-2	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-90-1	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-100-3	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B4-100-3	Constant Relative Humidity	100	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B3-90-2	Constant Relative Humidity	90	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
+B1-85-2	Constant Relative Humidity	85	percent	Dust	sample collection	NA	Not Applicable	NA	Not Applicable	-20	degree Celsius	High
