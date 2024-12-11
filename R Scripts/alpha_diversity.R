@@ -1,3 +1,4 @@
+# Includes alpha diversity for CRH vs VRH and Humidity Levels
 # Run nasa_data_processing.R first
 library(tidyr)
 library(ggplot2)
