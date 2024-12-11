@@ -1,9 +1,10 @@
+# Run nasa_data_processing.R firstt
 library(dplyr)
 library(vegan)
 
-# Fig 1A
+# Fig S1A
 # Perform Wilcoxon Rank-Sum Test
-wilcox_1a <- combined_metrics %>%
+wilcox_s1a <- combined_metrics %>%
   summarise(
     Observed_p = wilcox.test(Observed ~ treatment, data = ., exact = FALSE)$p.value,
     Chao1_p = wilcox.test(Chao1 ~ treatment, data = ., exact = FALSE)$p.value,
@@ -12,21 +13,21 @@ wilcox_1a <- combined_metrics %>%
   )
 
 # View results
-print(wilcox_1a)
+print(wilcox_s1a)
 
-# Fig 1B
+# Fig S1B
 # Perform PERMANOVA
-permanova_1b <- adonis2(bc_dm ~ treatment, data = sample_data_df, permutations = 999)
+permanova_s1b <- adonis2(bc_dm ~ treatment, data = sample_data_df, permutations = 999)
 
 # View results
-print(permanova_1b)
+print(permanova_s1b)
 
-# Fig 1C
+# Taxa bar plot (CRH/VRH)
 # Melt phyloseq object to get raw abundance data
 raw_abundance_data <- psmelt(nasa_phylum)
 
 # Perform Wilcoxon rank-sum test for each Phylum
-wilcox_1c <- raw_abundance_data %>%
+wilcox_s1c <- raw_abundance_data %>%
   group_by(Phylum) %>%
   summarise(
     p_value = wilcox.test(
@@ -38,9 +39,9 @@ wilcox_1c <- raw_abundance_data %>%
   )
 
 # View results
-print(wilcox_1c)
+print(wilcox_s1c)
 
-# Fig 2a
+# Fig 1A
 # Define comparisons
 comparisons <- list(
   c("Low", "High"),
@@ -68,10 +69,10 @@ compute_p_values <- function(data, comparisons) {
 }
 
 # Compute p-values
-wilcox_2a_results <- compute_p_values(long_data, comparisons)
+wilcox_1a_results <- compute_p_values(long_data, comparisons)
 
 # Unnest results
-wilcox_2a <- wilcox_2a_results %>%
+wilcox_1a <- wilcox_1a_results %>%
   unnest(cols = c(p_values, comparisons)) %>%
   rowwise() %>%
   mutate(
@@ -81,13 +82,13 @@ wilcox_2a <- wilcox_2a_results %>%
   select(Metric, Comparison, p_values)
 
 # Unlist the p_values column
-wilcox_2a <- wilcox_2a %>%
+wilcox_1a <- wilcox_1a %>%
   mutate(p_values = unlist(p_values))
 
 # View results
-print(wilcox_2a)
+print(wilcox_1a)
 
-# Fig 2B
+# Fig 1B
 # Pairwise PERMANOVA function
 pairwise.adonis2 <- function(dist, grouping, permutations = 999) {
   
@@ -127,12 +128,12 @@ pairwise_permanova <- function(distance_matrix, group_vector, permutations = 999
   pairwise_results <- pairwise.adonis2(distance_matrix, group_vector, permutations = permutations)
   return(pairwise_results)
 }
-permanova_2b <- pairwise_permanova(bc_dm, sample_data_df$humidity_bin)
+permanova_1b <- pairwise_permanova(bc_dm, sample_data_df$humidity_bin)
 
 # View results
-print(permanova_2b)
+print(permanova_1b)
 
-# Fig 2c
+# Taxa bar plot (Low, Medium, High)
 # Perform Kruskal-Wallis test for each Phylum
 kruskal_results <- raw_abundance_data %>%
   group_by(Phylum) %>%
