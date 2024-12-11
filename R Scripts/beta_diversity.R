@@ -1,4 +1,4 @@
-# Includes both beta diversity and taxa bar plots
+# Includes both beta diversity and taxa bar plots for CRH vs VRH and Humidity Levels
 # Please run the nasa_data_processing.R script before running this script
 library(ggpubr)
 library(broom)
