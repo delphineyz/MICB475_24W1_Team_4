@@ -1,14 +1,24 @@
+# Run nasa_data_processing.R first
 library(tidyr)
 library(ggplot2)
 library(dplyr)
+library(ggpubr)
+library(broom)
+library(vegan)
 
-# AIM 1
+# CRH vs. VRH
 
 # Extract sample data from nasa_rare
 sample_data_df <- data.frame(sample_data(nasa_rare))
 
 # Compute richness metrics (Observed, Chao1, Shannon)
 richness_metrics <- estimate_richness(nasa_rare, measures = c("Observed", "Chao1", "Shannon"))
+
+# Calculate Faith's Phylogenetic Diversity (PD)
+phylo_dist <- pd(t(otu_table(nasa_rare)), phy_tree(nasa_rare), include.root = FALSE)
+
+# Add Faith's PD to the sample data in the phyloseq object
+sample_data(nasa_rare)$Faith_PD <- phylo_dist$PD
 
 # Add Faith's PD to the richness metrics
 faith_pd <- data.frame(SampleID = rownames(sample_data(nasa_rare)), Faith_PD = sample_data(nasa_rare)$Faith_PD)
@@ -35,7 +45,7 @@ long_data$treatment <- factor(long_data$treatment,
                               labels = c("CRH", "VRH"))
 
 # Create the combined plot
-alpha_1a <- ggplot(long_data, aes(x = treatment, y = Value, fill = treatment)) +
+alpha_s1a <- ggplot(long_data, aes(x = treatment, y = Value, fill = treatment)) +
   geom_boxplot(alpha = 0.3, outlier.shape = 21, outlier.color = "black", outlier.size = 2) +
   scale_fill_manual(values = c(
     "CRH" = "#FF5733",
@@ -56,11 +66,11 @@ alpha_1a <- ggplot(long_data, aes(x = treatment, y = Value, fill = treatment)) +
   )
 
 # Print the combined plot
-print(alpha_1a)
+print(alpha_s1a)
 
 
 
-# AIM 2
+# Low, Medium, High
 
 # Define comparisons
 comparisons <- list(
@@ -70,7 +80,7 @@ comparisons <- list(
 )
 
 # Create the combined plot
-alpha_2a <- ggplot(long_data, aes(x = humidity_bin, y = Value, fill = humidity_bin)) +
+alpha_1a <- ggplot(long_data, aes(x = humidity_bin, y = Value, fill = humidity_bin)) +
   geom_boxplot(alpha = 0.3, outlier.shape = 21, outlier.color = "black", outlier.size = 2) +
   scale_fill_manual(name = "Humidity Bin", values = c("High" = "#FF5733", "Medium" = "#3333FF", "Low" = "#33FF57")) +
   stat_compare_means(method = "wilcox.test", label = "p.signif", hide.ns = FALSE, comparisons = comparisons, bracket.size= 0.3, size = 3) +
@@ -88,5 +98,4 @@ alpha_2a <- ggplot(long_data, aes(x = humidity_bin, y = Value, fill = humidity_b
   )
 
 # Print the combined plot
-print(alpha_2a)
-
+print(alpha_1a)
