@@ -1,3 +1,4 @@
+# Includes both beta diversity and taxa bar plots
 # Please run the nasa_data_processing.R script before running this script
 library(ggpubr)
 library(broom)
