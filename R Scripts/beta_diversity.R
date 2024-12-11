@@ -1,4 +1,4 @@
-#Please run the nasa_data_processing.R script before running this script
+# Please run the nasa_data_processing.R script before running this script
 library(ggpubr)
 library(broom)
 library(vegan)
@@ -45,9 +45,11 @@ library(vegan)
     # Convert to relative abundance and group by phylum
     nasa_RA <- transform_sample_counts(nasa_rare, function(x) x/sum(x))
     nasa_phylum <- tax_glom(nasa_RA, taxrank = "Phylum", NArm=FALSE)
-    # plot the new plot
-    gg_taxa <- plot_bar(nasa_phylum, fill="Phylum") + 
+    
+    # Create taxa plot
+    samples_plot <- plot_bar(nasa_phylum, fill="Phylum") + 
       facet_wrap(.~treatment, scales = "free_x")
+    samples_plot
     
     # Melt data and calculate the mean relative abundance of each Phylum by treatment
     nasa_phylum_data <- psmelt(nasa_phylum) %>%
@@ -77,10 +79,6 @@ sample_data(nasa_rare)$humidity_bin <- factor(
   sample_data(nasa_rare)$humidity_bin,
   levels = c("Low", "Medium", "High")  # Specify the desired order
 )
-
-# Calculate Bray-Curtis distance and perform PCoA ordination
-bc_dm <- phyloseq::distance(nasa_rare, method = "bray")
-pcoa_bc <- phyloseq::ordinate(nasa_rare, method = "PCoA", distance = bc_dm)
 
 # Plot with enhanced aesthetics and ellipses
 pcoa_1b <- plot_ordination(nasa_rare, pcoa_bc, color = "humidity_bin") +
@@ -115,20 +113,18 @@ pcoa_1b <- plot_ordination(nasa_rare, pcoa_bc, color = "humidity_bin") +
 pcoa_1b
 
 ### Taxa Bar Plot - Low, Medium, High 
-# Convert to relative abundance and group by phylum
-nasa_RA <- transform_sample_counts(nasa_rare, function(x) x/sum(x))
-nasa_phylum <- tax_glom(nasa_RA, taxrank = "Phylum", NArm=FALSE)
-# plot the new plot
-taxa_humidity <- plot_bar(nasa_phylum, fill="Phylum") + 
-  facet_wrap(.~humidity_bin, scales = "free_x")
-taxa_humidity
 
-# Melt data and calculate the mean relative abundance of each Phylum by treatment
+# Create taxa plot
+samples_humidity <- plot_bar(nasa_phylum, fill="Phylum") + 
+  facet_wrap(.~humidity_bin, scales = "free_x")
+samples_humidity
+
+# Melt data and calculate the mean relative abundance of each Phylum by humidity bin
 nasa_phylum_data <- psmelt(nasa_phylum) %>%
   group_by(humidity_bin, Phylum) %>%
   summarize(mean_abundance = mean(Abundance), .groups = "drop")
 
-# Plot mean relative abundance by Phylum within each treatment
+# Plot mean relative abundance by Phylum within each humidity bin
 taxa_humidity <- ggplot(nasa_phylum_data, aes(x = humidity_bin, y = mean_abundance, fill = Phylum)) +
   geom_bar(stat = "identity", position = "stack") +
   scale_y_continuous(labels = scales::percent_format()) +  # Display as percentages
@@ -144,6 +140,3 @@ taxa_humidity <- ggplot(nasa_phylum_data, aes(x = humidity_bin, y = mean_abundan
 
 # Display the plot
 taxa_humidity
-
-
-    
