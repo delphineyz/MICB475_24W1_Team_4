@@ -1,11 +1,15 @@
-# This is the code to do DESeq and Core Microbiome Analysis
+# This is the code to do aim 3 of the project
 # Please run the nasa_data_processing.R script prior to working on this file
+library(indicspecies)
 library(microbiome)
 library(ggVennDiagram)
 library(sf)
 library(ggtern)
+# Ensure patchwork is loaded
 library(patchwork)
 
+
+## AIM 3 ----
 #### DESeq ####
 
 ## NOTE: If you get a zeros error, then you need to add '1' count to all reads
@@ -14,19 +18,19 @@ nasa_deseq <- phyloseq_to_deseq2(nasa_plus1, ~`humidity_bin`)
 DESEQ_nasa <- DESeq(nasa_deseq)
 res1 <- results(DESEQ_nasa, tidy=TRUE, 
                 #this will ensure that No is your reference group
-                contrast = c("humidity_bin","Low","Medium"))
+                contrast = c("humidity_bin","High","Low"))
 View(res1)
 
 res2 <- results(DESEQ_nasa, tidy=TRUE, 
                 #this will ensure that No is your reference group
-                contrast = c("humidity_bin","Low","High"))
+                contrast = c("humidity_bin","Medium","Low"))
 View(res2)
 
 
 
 # Add a contrast label to each result set
-res1 <- res1 %>% mutate(contrast = "Low vs Medium")
-res2 <- res2 %>% mutate(contrast = "Low vs High")
+res1 <- res1 %>% mutate(contrast = "Low vs High")
+res2 <- res2 %>% mutate(contrast = "Low vs Medium")
 
 # Combine results and filter for significant ASVs
 combined_res <- bind_rows(res1, res2) 
@@ -34,7 +38,7 @@ combined_res <- bind_rows(res1, res2)
 combined_res_sig <- combined_res %>%
   filter(padj < 0.05 & abs(log2FoldChange) > 1) %>%
   dplyr::rename(ASV = row)
-combined_res
+
 
 # Extract the significant ASV names from combined_res_sig
 sig_ASVs <- combined_res_sig$ASV
@@ -54,18 +58,17 @@ sigASVs_final <- tax_table(nasa_filtered) %>%
   right_join(filtered_combined_res, by = "ASV")
 
 # Create the bar plot with flipped axes
-deseq_bar <- ggplot(sigASVs_final, aes(x = log2FoldChange, y = Genus, fill = contrast)) +
+ggplot(sigASVs_final, aes(x = log2FoldChange, y = Genus, fill = contrast)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.7)) +
-  scale_y_discrete(labels = function(y) ifelse(y == "g__Chloroplast", "p__Cyanobacteria", y)) +
   geom_errorbar(aes(xmin = log2FoldChange - lfcSE, xmax = log2FoldChange + lfcSE), 
                 position = position_dodge(width = 0.7), width = 0.3) +
-  scale_fill_manual(values = c("Low vs Medium" = "skyblue", "Low vs High" = "salmon")) +
+  scale_fill_manual(values = c("Low vs High" = "salmon", "Low vs Medium" = "skyblue")) +
   theme(axis.text.y = element_text(angle = 0, hjust = 1)) +
   ylab("Genus") +
   xlab("log2 Fold Change") +
   theme_minimal() +
-  labs(title = "Fold Change Comparison by Contrast (Filtered by Significant Genuses)", fill = "Contrast")
-deseq_bar
+  labs(title = "Significant Fold Change Compared to Low Humidity", fill = "Contrast")
+
 
 
 
@@ -82,7 +85,7 @@ volcano_data <- volcano_data %>%
   )
 
 # Create the volcano plot
-volcano_plot <- ggplot(volcano_data, aes(x = log2FoldChange, y = -log10(padj), color = significant, shape = contrast)) +
+ggplot(volcano_data, aes(x = log2FoldChange, y = -log10(padj), color = significant, shape = contrast)) +
   geom_point(alpha = 0.8, size = 3) +
   scale_color_manual(values = c("TRUE" = "red", "FALSE" = "gray")) +
   scale_shape_manual(values = c("Low vs Medium" = 16, "Low vs High" = 17)) +
@@ -97,7 +100,7 @@ volcano_plot <- ggplot(volcano_data, aes(x = log2FoldChange, y = -log10(padj), c
     shape = "Contrast"
   ) +
   theme(legend.position = "right")
-volcano_plot
+
 
 
 
@@ -228,3 +231,144 @@ combined_plot <- low_plot / medium_plot / high_plot +
 
 # Display the combined plot
 print(combined_plot)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Extract taxonomy table and convert to data frame
+taxonomy_df <- as.data.frame(tax_table(nasa_RA)) %>%
+  rownames_to_column(var = "ASV")
+
+# Create a combined data frame for the core microbiome across humidity bins
+core_microbiome_data <- data.frame(
+  ASV = unique(c(
+    rownames(tax_table(nasa_core_low)),
+    rownames(tax_table(nasa_core_medium)),
+    rownames(tax_table(nasa_core_high))
+  )),
+  Low = 0,
+  Medium = 0,
+  High = 0
+)
+
+# Fill in relative abundances for each humidity bin
+core_microbiome_data$Low <- ifelse(
+  core_microbiome_data$ASV %in% rownames(tax_table(nasa_core_low)),
+  taxa_sums(nasa_core_low)[core_microbiome_data$ASV] / sum(taxa_sums(nasa_core_low)),
+  0
+)
+
+core_microbiome_data$Medium <- ifelse(
+  core_microbiome_data$ASV %in% rownames(tax_table(nasa_core_medium)),
+  taxa_sums(nasa_core_medium)[core_microbiome_data$ASV] / sum(taxa_sums(nasa_core_medium)),
+  0
+)
+
+core_microbiome_data$High <- ifelse(
+  core_microbiome_data$ASV %in% rownames(tax_table(nasa_core_high)),
+  taxa_sums(nasa_core_high)[core_microbiome_data$ASV] / sum(taxa_sums(nasa_core_high)),
+  0
+)
+
+# Normalize relative abundances
+core_microbiome_data <- core_microbiome_data %>%
+  mutate(
+    Total = Low + Medium + High,
+    Low = Low / Total,
+    Medium = Medium / Total,
+    High = High / Total
+  ) %>%
+  select(-Total)
+
+# Map ASV to genera
+core_microbiome_data <- core_microbiome_data %>%
+  left_join(taxonomy_df %>% select(ASV, Genus), by = "ASV") %>%
+  mutate(Genus = ifelse(is.na(Genus), "Unclassified", Genus))
+
+# Generate the ternary plot
+ternary_plot <- ggtern(data = core_microbiome_data, aes(x = Low, y = Medium, z = High, color = Genus)) +
+  geom_point(size = 4, alpha = 0.8) +             # Add points for each genus
+  geom_text(aes(label = Genus), hjust = -0.3, vjust = -0.3, size = 3, check_overlap = TRUE) +  # Add genus labels
+  scale_color_manual(values = genus_colors, na.value = "gray") +  # Use consistent colors for genera
+  theme_classic(base_size = 15) +                 # Classic theme for clarity
+  labs(
+    title = "Core Microbiome Composition (Ternary Plot)",
+    x = "Low Humidity",
+    y = "Medium Humidity",
+    z = "High Humidity"
+  ) +
+  theme(
+    legend.position = "right",                     # Display legend for clarity
+    plot.title = element_text(size = 16, face = "bold")
+  )
+
+# Display the plot
+print(ternary_plot)
+
+# Generate the ternary plot
+ternary_plot <- ggtern(data = core_microbiome_data, aes(x = Low, y = Medium, z = High, color = Genus)) +
+  geom_point(size = 4, alpha = 0.8) +             # Add points for each genus
+  geom_text(aes(label = Genus), hjust = -0.2, vjust = -0.2, size = 3, check_overlap = TRUE) +  # Add genus labels
+  scale_color_manual(values = genus_colors, na.value = "gray") +  # Use consistent colors for genera
+  theme_bw(base_size = 15) +                      # Use a clean black and white theme
+  labs(
+    title = "Core Microbiome Composition (Ternary Plot)",
+    x = "Low Humidity",
+    y = "Medium Humidity",
+    z = "High Humidity"
+  ) +
+  theme(
+    legend.position = "right",                     # Display legend for clarity
+    plot.title = element_text(size = 16, face = "bold"),
+    plot.margin = margin(t = 20, r = 20, b = 20, l = 20)  # Add space around the plot
+  )
+
+# Display the corrected ternary plot
+print(ternary_plot)
+
+
+
+
+
+
+
+
+
+
+
+
