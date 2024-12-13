@@ -1,6 +1,5 @@
 # This is the code to do aim 3 of the project
 # Please run the nasa_data_processing.R script prior to working on this file
-library(indicspecies)
 library(microbiome)
 library(ggVennDiagram)
 library(sf)
