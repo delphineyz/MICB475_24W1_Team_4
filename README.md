@@ -11,15 +11,3 @@ Simran Dhesi
 
 https://osdr.nasa.gov/bio/repo/data/studies/OSD-694
 https://pubmed.ncbi.nlm.nih.gov/39256883/
-
-
-**Hi Team 4! Here are the zoom link and passcode we will use for our next meeting (October 10th). Thank you and see you soon!**
-
-Here is the link you can use: https://ubc.zoom.us/j/67359231965?pwd=1QOWWuFTTjXQcla2T32GQ5MoyAUHhG.1
-
-Meeting ID: 673 5923 1965
-
-Passcode: 574502
-
-
-Pre-mature presentation: https://www.canva.com/design/DAGXo6vdEds/lnBNRkQVD4r43wed26R2Uw/edit?utm_content=DAGXo6vdEds&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
