@@ -1,6 +1,10 @@
 # This is the code to do aim 3 of the project
 # Please run the nasa_data_processing.R script prior to working on this file
 library(microbiome)
+library(DESeq2)
+library(phyloseq)
+library(tidyverse)
+library(ape)
 library(ggVennDiagram)
 library(sf)
 library(ggtern)
