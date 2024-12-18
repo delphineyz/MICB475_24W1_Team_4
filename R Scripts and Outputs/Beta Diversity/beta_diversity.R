@@ -3,6 +3,7 @@
 library(ggpubr)
 library(broom)
 library(vegan)
+library(phyloseq)
 
 ### Figure S1B ----
     # Calculate Bray-Curtis distance and perform PCoA ordination
