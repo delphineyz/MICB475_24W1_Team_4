@@ -4,9 +4,9 @@ library(microbiome)
 library(ggVennDiagram)
 library(sf)
 library(ggtern)
-# Ensure patchwork is loaded
 library(patchwork)
-
+library(dplyr)
+library(tibble)
 
 ## AIM 3 ----
 #### DESeq ####
