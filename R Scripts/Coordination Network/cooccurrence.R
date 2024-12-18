@@ -1,4 +1,4 @@
-### Lets try building some co-occurance networks
+### Lets try building some co-occurrence networks
 library(SpiecEasi)
 library(igraph)
 library(phyloseq)
