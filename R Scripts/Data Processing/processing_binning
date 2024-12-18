@@ -1,3 +1,4 @@
+# Script to create humidity binds. Not needed to run if using updated_nasa_dust_metadata.tsv.
 # Load necessary library
 library(dplyr)
 
