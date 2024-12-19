@@ -1,13 +1,22 @@
-
-
-
+# Please run the nasa_data_processing.R script prior to working on this file
+library(microbiome)
+library(phyloseq)
+library(tidyverse)
+library(ape)
+library(ggVennDiagram)
+library(sf)
+library(ggtern)
+library(patchwork)
+library(dplyr)
+library(tibble)
 
 #### Core Microbiome----
 
-# Step 2: Convert to relative abundance
+# Venn diagram
+# Convert to relative abundance
 nasa_RA <- transform_sample_counts(nasa_rare, function(x) x / sum(x))
 
-# Step 3: Subset the phyloseq object by humidity_bin categories
+# Subset the phyloseq object by humidity_bin categories
 nasa_low <- subset_samples(nasa_RA, humidity_bin == "Low")
 nasa_medium <- subset_samples(nasa_RA, humidity_bin == "Medium")
 nasa_high <- subset_samples(nasa_RA, humidity_bin == "High")
@@ -17,16 +26,16 @@ nasa_low <- prune_samples(sample_sums(nasa_low) > 0, nasa_low)
 nasa_medium <- prune_samples(sample_sums(nasa_medium) > 0, nasa_medium)
 nasa_high <- prune_samples(sample_sums(nasa_high) > 0, nasa_high)
 
-# Step 4: Define detection and prevalence thresholds
+# Define detection and prevalence thresholds
 detection_threshold <- 0.001  # Minimum relative abundance
 prevalence_threshold <- 0.5   # Core taxa must be present in at least 50% of samples
 
-# Step 5: Identify core ASVs for each subset using core_members()
+# Identify core ASVs for each subset using core_members()
 core_low_ASVs <- core_members(nasa_low, detection = detection_threshold, prevalence = prevalence_threshold)
 core_medium_ASVs <- core_members(nasa_medium, detection = detection_threshold, prevalence = prevalence_threshold)
 core_high_ASVs <- core_members(nasa_high, detection = detection_threshold, prevalence = prevalence_threshold)
 
-# Step 6: Create lists of core ASVs for Venn diagram
+# Create lists of core ASVs for Venn diagram
 core_list <- list(
   "Low Humidity" = core_low_ASVs,
   "Medium Humidity" = core_medium_ASVs,
@@ -38,35 +47,14 @@ venn_plot <- ggVennDiagram(core_list, label = "count") +
   scale_fill_gradient(low = "lightblue", high = "darkblue") +
   labs(title = "Venn Diagram of Core Microbiome by Humidity Bin")
 
-# Save the Venn diagram as a PNG file
-ggsave("core_microbiome_venn.png", venn_plot, width = 8, height = 6)
-
-# Step 8: Display the Venn diagram
+# Display the Venn diagram
 print(venn_plot)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Step 9: Prune phyloseq objects to only keep core ASVs for each category
+# Save the Venn diagram as a PNG file
+ggsave("core_microbiome_venn.png", venn_plot, width = 8, height = 6)
+                                   
+# Ternary plot
+# Prune phyloseq objects to only keep core ASVs for each category
 nasa_core_low <- prune_taxa(core_low_ASVs, nasa_low)
 nasa_core_medium <- prune_taxa(core_medium_ASVs, nasa_medium)
 nasa_core_high <- prune_taxa(core_high_ASVs, nasa_high)
@@ -79,8 +67,6 @@ genus_colors <- c(
   "g__Staphylococcus" = "#619CFF",
   "g__Streptococcus" = "#C77CFF"
 )
-
-
 
 # Extract taxonomy table and convert to data frame
 taxonomy_df <- as.data.frame(tax_table(nasa_RA)) %>%
