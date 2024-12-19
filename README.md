@@ -18,7 +18,7 @@ Simran Dhesi
 
 ## Scripts
 ### QIIME2
-[Processing Script](/QIIME2/QIIME2_Processing.sh)\
+[Processing Script](/QIIME2/QIIME2_Processing.sh)
 ### R
 [Processing Script](/R%20Scripts%20and%20Outputs/Data%20Processing/nasa_data_processing.R)\
 [Alpha Diversity Script](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_diversity.R)\
