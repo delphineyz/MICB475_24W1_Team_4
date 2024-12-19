@@ -39,6 +39,6 @@ Simran Dhesi
 [Figure 4](/R%20Scripts%20and%20Outputs/Coordination%20Network/ \
 [Figure 5](/R%20Scripts%20and%20Outputs/Coordination%20Network/ \
 [Figure S1A](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_s1a.png)\
-[Figure S1B](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_s1b.png)\
+[Figure S1B](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_s1b.png)
 
 
