@@ -28,7 +28,7 @@ Simran Dhesi
 [Dot Matrix Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/dotmatrix.R)\
 [Statistical Analyses Script](/R%20Scripts%20and%20Outputs/Statistical%20Analyses/diversity_stats.R)
 
-## Files and figures
+## Files and Figures
 [QIIME2 Exports](/QIIME2/Exports)\
 [Figure 1A](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_1a.png)\
 [Figure 1B](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_1b.png)\
