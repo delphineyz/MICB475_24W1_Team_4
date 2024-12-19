@@ -17,14 +17,16 @@ Simran Dhesi
 [Nov. 7](/Meeting%20Minutes/Oct%207.md) | [Nov. 14](/Meeting%20Minutes/Oct%2014.md) | [Nov. 21](/Meeting%20Minutes/Oct%2021.md) | [Nov. 28](/Meeting%20Minutes/Oct%2028.md)
 
 ## Scripts
-[QIIME2 Processing Script](/QIIME2/QIIME2_Processing.sh)\
-[R Processing Script](/R%20Scripts%20and%20Outputs/Data%20Processing/nasa_data_processing.R)\
-[R Alpha Diversity Script](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_diversity.R)\
-[R Beta Diversity Script](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_diversity.R)\
-[R DESeq and Core Microbiome Script](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/DESEq_coreMicrobiome.R)\
-[R Co-Occurrence Network Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/cooccurrence.R)\
-[R Dot Matrix Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/dotmatrix.R)\
-[R Statistical Analyses Script](/R%20Scripts%20and%20Outputs/Statistical%20Analyses/diversity_stats.R)
+### QIIME2
+[Processing Script](/QIIME2/QIIME2_Processing.sh)\
+### R
+[Processing Script](/R%20Scripts%20and%20Outputs/Data%20Processing/nasa_data_processing.R)\
+[Alpha Diversity Script](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_diversity.R)\
+[Beta Diversity Script](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_diversity.R)\
+[DESeq and Core Microbiome Script](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/DESEq_coreMicrobiome.R)\
+[Co-Occurrence Network Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/cooccurrence.R)\
+[Dot Matrix Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/dotmatrix.R)\
+[Statistical Analyses Script](/R%20Scripts%20and%20Outputs/Statistical%20Analyses/diversity_stats.R)
 
 ## Files and figures
 [QIIME2 Exports](/QIIME2/Exports)\
