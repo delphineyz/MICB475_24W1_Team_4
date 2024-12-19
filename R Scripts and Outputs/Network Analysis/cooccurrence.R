@@ -49,7 +49,7 @@ filter_by_genus <- function(physeq_obj, min_count = 1, min_samples = 1) {
 
 
 
-##### specify the sample here
+##### specify category here (nasa_low_humidity, nasa_med_humidity, or nasa_high_humidity)
                               
 # Step 2: Filter the dataset at the genus level using the function above
 mouse_filtered <- filter_by_genus(nasa_med_humidity)
