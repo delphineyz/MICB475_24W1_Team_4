@@ -6,6 +6,7 @@ library(dplyr)
 library(ggpubr)
 library(broom)
 library(vegan)
+library(phyloseq)
 
 # CRH vs. VRH
 
