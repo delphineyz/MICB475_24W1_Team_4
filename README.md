@@ -23,7 +23,8 @@ Simran Dhesi
 [Processing Script](/R%20Scripts%20and%20Outputs/Data%20Processing/nasa_data_processing.R)\
 [Alpha Diversity Script](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_diversity.R)\
 [Beta Diversity Script](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_diversity.R)\
-[DESeq and Core Microbiome Script](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/DESEq_coreMicrobiome.R)\
+[DESeq Script](/R%20Scripts%20and%20Outputs/DESeq2/DESEq2.R)\
+[Core Microbiome Script](/R%20Scripts%20and%20Outputs/Core%20Microbiome/core_microbiome.R)\
 [Co-Occurrence Network Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/cooccurrence.R)\
 [Dot Matrix Script](/R%20Scripts%20and%20Outputs/Coordination%20Network/dotmatrix.R)\
 [Statistical Analyses Script](/R%20Scripts%20and%20Outputs/Statistical%20Analyses/diversity_stats.R)
@@ -32,12 +33,14 @@ Simran Dhesi
 [QIIME2 Exports](/QIIME2/Exports)\
 [Figure 1A](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_1a.png)\
 [Figure 1B](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_1b.png)\
-[Figure 2A](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/venn_coremicrobiome.png)\
-[Figure 2B](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/ \
+[Figure 2A](/R%20Scripts%20and%20Outputs/DESeq2/deseq_3a.png)\
+[Figure 2B](/R%20Scripts%20and%20Outputs/DESeq2/deseq_3b.png)\
 [Figure 3A](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/volcano_deseq.png)\
 [Figure 3B](/R%20Scripts%20and%20Outputs/DESeq%20and%20Core%20Microbiome/bar_deseq.png)\
-[Figure 4](/R%20Scripts%20and%20Outputs/Coordination%20Network/ \
-[Figure 5](/R%20Scripts%20and%20Outputs/Coordination%20Network/ \
+[Figure 4A](/R%20Scripts%20and%20Outputs/Coordination%20Network/low_igraph.png) \
+[Figure 4B](/R%20Scripts%20and%20Outputs/Coordination%20Network/med_igraph.png) \
+[Figure 5A](/R%20Scripts%20and%20Outputs/Coordination%20Network/low_dot.png) \
+[Figure 5B](/R%20Scripts%20and%20Outputs/Coordination%20Network/med_dot.png) \
 [Figure S1A](/R%20Scripts%20and%20Outputs/Alpha%20Diversity/alpha_s1a.png)\
 [Figure S1B](/R%20Scripts%20and%20Outputs/Beta%20Diversity/beta_s1b.png)
 
