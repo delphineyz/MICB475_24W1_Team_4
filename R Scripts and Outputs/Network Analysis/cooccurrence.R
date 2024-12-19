@@ -1,4 +1,4 @@
-### Lets try building some co-occurrence networks
+### Lets try building some co-occurance networks
 library(SpiecEasi)
 library(igraph)
 library(phyloseq)
@@ -38,6 +38,19 @@ filter_by_genus <- function(physeq_obj, min_count = 1, min_samples = 1) {
   return(physeq_genus)
 }
 
+
+
+
+
+
+
+
+
+
+
+
+##### specify the sample here
+                              
 # Step 2: Filter the dataset at the genus level using the function above
 mouse_filtered <- filter_by_genus(nasa_med_humidity)
 
@@ -162,138 +175,3 @@ generate_network_igraph <- function(physeq_obj, seed = 42, genera_to_label) {
 }
 # Run the function
 generate_network_igraph(mouse_filtered, genera_to_label = genera_to_label)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Define genera of interest
-genera_to_label <- c(
-  "g_Veillonella", "g_UCG-002", "g_Streptococcus", "g_Prevotella", 
-  "g_Peptoniphilus", "g_Murdochiella", "g_Fusobacterium", "g_Fastidiosipila", 
-  "g_Corynebacterium", "g_Chloroplast", "g_Brevibacterium", "g_Anaerococcus", "g_Finegoldia"
-)
-
-# Generate network with igraph
-generate_network_igraph <- function(physeq_obj, seed = 42, genera_to_label) {
-  print("Applying data transformations...")
-  
-  # Extract OTU table
-  otu_data <- as.matrix(otu_table(physeq_obj))
-  
-  # Apply SpiecEasi with adjusted parameters
-  se.mb <- spiec.easi(
-    otu_data, 
-    method = 'mb', 
-    pulsar.params = list(rep.num = 20),
-    nlambda = 50,
-    lambda.min.ratio = 1e-3
-  )
-  print("SpiecEasi analysis completed")
-  
-  # Extract adjacency matrix
-  adj_matrix <- getRefit(se.mb)
-  
-  # Check if the adjacency matrix is empty
-  if (sum(adj_matrix) == 0) {
-    stop("Adjacency matrix is empty. Adjust SpiecEasi parameters.")
-  }
-  
-  # Convert to igraph
-  ig_network <- adj2igraph(adj_matrix, vertex.attr = list(name = taxa_names(physeq_obj)))
-  
-  # Add taxonomic information
-  taxa_info <- as.data.frame(tax_table(physeq_obj))
-  V(ig_network)$Genus <- taxa_info$Genus[match(V(ig_network)$name, rownames(taxa_info))]
-  V(ig_network)$Phylum <- taxa_info$Phylum[match(V(ig_network)$name, rownames(taxa_info))]
-  
-  # Handle missing values in taxonomic information
-  V(ig_network)$Genus[is.na(V(ig_network)$Genus)] <- "Unknown"
-  V(ig_network)$Phylum[is.na(V(ig_network)$Phylum)] <- "Unknown"
-  
-  # Assign sizes to vertices based on abundance
-  otu_abundance <- taxa_sums(physeq_obj)
-  valid_names <- intersect(V(ig_network)$name, names(otu_abundance))
-  otu_abundance <- otu_abundance[valid_names]
-  V(ig_network)$size <- log10(otu_abundance + 1) * 4
-  
-  # Generate colors for phyla
-  unique_phyla <- unique(V(ig_network)$Phylum)
-  phylum_colors <- brewer.pal(min(length(unique_phyla), 8), "Set1")
-  names(phylum_colors) <- unique_phyla
-  V(ig_network)$color <- phylum_colors[V(ig_network)$Phylum]
-  
-  # Assign labels to specified genera
-  V(ig_network)$label <- NA
-  V(ig_network)$label_color <- "black"
-  V(ig_network)$label[V(ig_network)$Genus %in% genera_to_label] <- V(ig_network)$Genus[V(ig_network)$Genus %in% genera_to_label]
-  V(ig_network)$label_color[V(ig_network)$Genus %in% genera_to_label] <- "red"
-  
-  # Remove unconnected nodes
-  ig_network <- delete_vertices(ig_network, V(ig_network)[degree(ig_network) == 0])
-  
-  # Plot the network
-  set.seed(seed)
-  layout <- layout_with_fr(ig_network)
-  
-  plot(
-    ig_network,
-    layout = layout,
-    vertex.label = V(ig_network)$label,
-    vertex.label.color = V(ig_network)$label_color,
-    vertex.label.cex = 0.6,
-    vertex.size = V(ig_network)$size,
-    vertex.color = V(ig_network)$color,
-    vertex.frame.color = "gray30",
-    edge.width = 0.5,
-    edge.color = "gray50",
-    main = "Microbial Network by Phylum"
-  )
-  
-  # Add legend for phyla colors
-  legend(
-    "topleft",
-    legend = names(phylum_colors),
-    col = phylum_colors,
-    pch = 19,
-    cex = 0.8,
-    bty = "n",
-    title = "Phylum",
-    bg = "white"
-  )
-  
-  print("Plotting completed")
-}
-
-# Run the function
-generate_network_igraph(mouse_filtered, genera_to_label = genera_to_label)
-
-
-
-
-
