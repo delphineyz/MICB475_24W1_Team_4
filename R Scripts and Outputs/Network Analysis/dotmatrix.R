@@ -1,3 +1,41 @@
+# Step 1: Generate the SpiecEasi network
+set.seed(42)
+
+otu_data <- as.matrix(otu_table(mouse_filtered))
+se.mb <- spiec.easi(otu_data, method = 'mb', pulsar.params = list(rep.num = 20))
+
+# Step 2: Extract the adjacency matrix from the SpiecEasi object
+adj_matrix <- as.matrix(getRefit(se.mb))
+
+# Step 3: Convert the adjacency matrix to a long format
+chord_data <- as.data.frame(as.table(adj_matrix))
+chord_data <- chord_data[chord_data$Freq > 0 & chord_data$Var1 != chord_data$Var2, ]
+
+# Step 4: Add taxonomy information for better grouping
+tax <- tax_table(mouse_filtered)
+
+
+# Ensure that the Phylum column is properly extracted
+chord_data$Genus_from <- sapply(chord_data$Var1, function(x) tax[x, "Genus"])
+chord_data$Genus_to <- sapply(chord_data$Var2, function(x) tax[x, "Genus"])
+
+# Check if there are any NA values in the Phylum columns and remove them
+chord_data <- chord_data[!is.na(chord_data$Genus_from) & !is.na(chord_data$Genus_to), ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Prepare the data for the triangular dot matrix plot
 dot_data <- chord_data %>%
   filter(Genus_from != Genus_to) %>%
